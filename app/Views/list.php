@@ -206,10 +206,12 @@ $(document).ready(function () {
     }); 
  
     $('body').on('click', '.btnDelete', function () {
+        if(window.confirm("¿ Eliminar este registro ?")){
         var student_id = $(this).attr('data-id');
         $.get('student/delete/'+student_id, function (data) {
             $('#studentTable tbody #'+ student_id).remove();
         })
+    }
     });  
 });   
 </script>
